@@ -8,7 +8,8 @@ from huggingface_hub import snapshot_download
 import weblinx as wl
 from weblinx.utils.recs import ungroup_dict_to_records
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(FILE_DIR, os.pardir))
 
 def maybe_download(demo_names, dataset_dir):
     patterns = [f"demonstrations/{name}/*" for name in demo_names]
@@ -80,7 +81,25 @@ def evaluate(grounding_model, split, model_name=""):
 
     # load data
     if split == "testing":
-        demo_names = ['saabwsg', 'ygprzve', 'iqaazif']
+        demo_names = [
+            "ygprzve",
+            "saabwsg",
+            "iqaazif",
+            "eiblold",
+            "pjzqiar",
+            "polclhz",
+            "hvdwmnq",
+            "feupcgi",
+            "hdbpxqn",
+            "bdhiwrz",
+            "bonfxww",
+            "vyetbcl",
+            "eaozdtr",
+            "dpftfrs",
+            "qjmnlfs",
+            "aoxxcdg",
+            "orlmkas",
+        ]
     else:
         split_path = os.path.join(dataset_dir, "splits.json")
         demo_names = wl.utils.load_demo_names_in_split(split_path, split=split)
