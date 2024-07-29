@@ -30,7 +30,7 @@ class GroundingModel(abc.ABC):
                 demo=demo,
                 format_intent_input=format_intent_input,
                 max_neg_per_turn=None,
-                only_allow_valid_uid=False,
+                only_allow_valid_uid=True,
             )
             input_records.extend(demo_records)
         logging.info(f"Completed. Number of input records: {len(input_records)}")

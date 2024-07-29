@@ -125,4 +125,4 @@ class WeblinxGrounding(GroundingModel):
 
 if __name__ == "__main__":
     model = WeblinxGrounding()
-    evaluate(model, split="testing", model_name="constraint")
+    evaluate(model, split="testing", model_name="webtree")
